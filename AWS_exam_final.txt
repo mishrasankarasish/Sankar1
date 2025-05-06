@@ -15,6 +15,10 @@ EC2-Launch Instance-Create key pair-Allow SSH,HTTP,HTTPS-Then open Bitvise SSH c
 
 Open github new repository - Login- Open the local folder and right click then click on Open Git Bash- type( git init, git remote add origin , git add . ,git commit -m "first commit", git push -u origin master,git clone https://github.com/mishrasankarasish/sa_yu_po.git)
 
+if some conflict in git
+git config --global user.email “mishrasankarasish@gmail.com”
+git config --global user.name “Sankarasish-Mishra”
+
 9. Deploy a project from GitHub to EC2.
 
 Upload files to github - Settng-developer setting- classic token generate- EC2- ubuntu-allow(ssh-http-https)- copy the IPV4 address- connect bitvise client- Command( (sudo apt-get update,sudo apt-get upgrade, sudo apt install nginx, git clone address, curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash –,sudo apt-get install nodejs, npm install,
