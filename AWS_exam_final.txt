@@ -1,3 +1,10 @@
+4) Create a private bucket in AWS .Upload a file and check by reassigned URL whether you can access the file or not.
+-> S3->BUCKET NAME->creat->click on bucket and upload a image-> Check it open or not(using link)
+  Click on image link-> click on object actions-> click on share with presigned url->set time->check visibility
+
+5) Create a public bucket in AWS .Upload a file and give the necessary permission to check the file URL is working.
+-> s3-> BUCKET NAME-> object ownership tap on the ACLs enabled option->remove the tick from block all public access->creat-> click on bucket and upload a image-> Check it open or not(using link)
+Click on image link->click ACL-> edit (public access read tick)-> check visibility
 6. Upload a static website on S3.
 S3-create-ACLs Enabled-uncheck “block all public access” and enable bucket versioning-Open the properties and scroll down to Static website hosting then click on edit.-Click on upload to upload file-Open the permissions on file and edit- Object URL
 
