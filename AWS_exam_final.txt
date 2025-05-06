@@ -1,0 +1,137 @@
+6. Upload a static website on S3.
+S3-create-ACLs Enabled-uncheck “block all public access” and enable bucket versioning-Open the properties and scroll down to Static website hosting then click on edit.-Click on upload to upload file-Open the permissions on file and edit- Object URL
+
+7. Hosting a website on EC2.
+EC2-Launch Instance-Create key pair-Allow SSH,HTTP,HTTPS-Then open Bitvise SSH client and open the client key manager and import the .pem file downloaded after creating the key pair. Then paste the Public IPv4 address in Host IP-Command(sudo apt-get update,sudo apt-get upgrade, sudo apt install nginx, cd ../../var, cd www, sudo chmod 777 html)-open bitvise-sftp window-drag and drop the html files from local files section to remote files section path(/var/www/html).-then open incognito mode-ipv4 address
+
+8. Deploy a project from a local machine to GitHub and vice versa.
+
+Open github new repository - Login- Open the local folder and right click then click on Open Git Bash- type( git init, git remote add origin , git add . ,git commit -m "first commit", git push -u origin master,git clone https://github.com/mishrasankarasish/sa_yu_po.git)
+
+9. Deploy a project from GitHub to EC2.
+
+Upload files to github - Settng-developer setting- classic token generate- EC2- ubuntu-allow(ssh-http-https)- copy the IPV4 address- connect bitvise client- Command( (sudo apt-get update,sudo apt-get upgrade, sudo apt install nginx, git clone address, curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash –,sudo apt-get install nodejs, npm install,
+
+
+10. : Deploy a project from GitHub to EC2 by creating a new security group and user data.
+
+
+instance create- select security group- advance details
+#!/bin/bash
+apt-get update
+apt-get upgrade
+apt-get install -y ngix
+systemctl start nginx
+systemctl enable nginx
+apt-get instll -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt-get install -y nodejs
+
+bitvise- (sudo apt-get update,sudo apt-get upgrade, sudo apt install nginx, git clone address, cd git_repository, npm install, node index.js),- incognito mode ip address:4000)
+
+
+11. Build scaling plans in AWS that balance the load on different EC2 instances.
+
+EC2-Launch Template- click on autoscaling guidance-Quick Start- ubuntu- 
+#!/bin/bash
+apt-get update
+apt-get upgrade
+apt-get install -y ngix
+systemctl start nginx
+systemctl enable nginx
+apt-get instll -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt-get install -y nodejs
+git clone https://github.com/mishrasankarasish/new_aws.git
+cd new_aws
+npm install
+node index.js
+Auto scalling Group- groupname - select launchTemplate- version (Latest(1))- availability zone- balanced besteffort- Attach to a new load balencer- Network Load Balancer(TCP,UDP)-internal- attach to vpc lattice service-Desired capacity(2)- min desired(2)-maX(3)-terget tracking scalling policy-aerage cpu uti-no scalling policy-Terminate and launch- min(32)
+
+
+Sudo nano infy.sh
+#!/bin/bash
+While(true)
+do
+	echo “Inside loop”
+done
+ctrl x yes enter ->>
+sudo chmod +x infy.sh  ->>
+sh infy.sh -> minimize terminal
+select two instance -> cpu utilization -> enlarge
+
+
+
+
+
+
+
+12. EC2-> Launch Instance-> 
+
+#!/bin/bash
+apt-get update
+apt-get upgrade
+apt-get install -y ngix
+systemctl start nginx
+systemctl enable nginx
+apt-get instll -y git
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+apt-get install -y nodejs
+git clone https://github.com/mishrasankarasish/new_aws.git
+cd new_aws
+npm install
+node index.js
+
+ip address:4000 -> 
+open bitvise 
+cd ../..
+cd etc
+cd nginx
+cd sites-avaiilable
+sudo nano default
+
+server {
+        listen 80;
+#       listen [::]:80;
+#
+        server_name_;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+        location / {
+#               try_files $uri $uri/ =404;
+        proxy_pass http://localhost:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+}
+}
+
+sudo systemctl restart nginx
+open ip address
+
+
+
+
+
+
+
+
+
+
+
+
+
+13. Create a workmail for ur organization
+crate a new organization- Free test domain- organizaions- users- add user-
+
+
+15. Create a server less computing service
+Lambda-Create function-in code hallo name-deploy- configuration-function url-none-url click
+
+14. Create an Elastic IP for an Instance.
+EC2- Launch Instance- ubuntu- allow all security group- launch- Open Bitvise- Login ip- (sudo apt-get update,sudo apt-get upgrade, sudo apt install nginx,) - Allocate elastic ip-select instance-private ip adress- allow check box- then copy ipv4 addess - check
+	
